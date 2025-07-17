@@ -38,7 +38,7 @@ const projects = [
         id: 3,
         title: "Cosmetic App",
         description: "A Landing Page For Cosmetic clinic",
-        image: "/project3.png",
+        image: "/cosmetic.png",
         tags: [
             { name: "React", color: "bg-blue-500" },
             { name: "Node.js", color: "bg-green-500" },
@@ -82,7 +82,7 @@ const projects = [
         title: "Modern Startup Landing Page",
         description: "A sleek and responsive landing page built with React, Framer Motion, Swiper, and Tailwind CSS. It features smooth animations,  a carousel for testimonials or features, and a modern layout designed to capture user attention and boost engagement."
         ,
-        image: "/project6.png",
+        image: "/modern.png",
         tags: [
             { name: "React", color: "bg-blue-500" },
             { name: "Tailwind CSS", color: "bg-green-500" },
