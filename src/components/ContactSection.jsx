@@ -5,7 +5,6 @@ import {
   MapPin,
   Phone,
   Twitter,
-  Instagram,
   Send,
 } from "lucide-react";
 import React from "react";
@@ -97,17 +96,14 @@ export const ContactSection = () => {
           <div className="pt-8">
             <h4 className="font-medium mb-4">Connect With Me</h4>
             <div className="flex space-x-4 justify-center">
-              <a href="#">
+              <a href="www.linkedin.com/in/adewale-gbadebo-717867350">
                 <Linkedin />
               </a>
-              <a href="#">
+              <a href="https://github.com/izzypositivetech-001">
                 <Github />
               </a>
-              <a href="#">
+              <a href="https://x.com/Gbadeb16Adewale">
                 <Twitter />
-              </a>
-              <a href="#">
-                <Instagram />
               </a>
             </div>
           </div>

@@ -4,15 +4,15 @@ import React from 'react';
 const projects = [
     {
         id: 1,
-        title: "AI Fitness Trainer with Next.js and Gemini",
-        description: "An AI-powered fitness trainer that provides personalized workout plans and nutrition advice.",
-        image: "/proj1.jpeg",
-        tags: [  // Changed 'Tags' to lowercase 'tags'
+        title: "Patient Management System",
+        description: "A full-stack web application built with Next.js, TypeScript, and Tailwind CSS, integrating Twilio for SMS notifications. It enables hospitals to manage patient records, appointments, and communication efficiently with secure, role-based access.",
+        image: "/project1.png",
+        tags: [  
             { name: "Nextjs", color: "bg-blue-500" },
-            { name: "JavaScript", color: "bg-yellow-500" },
-            { name: "AI", color: "bg-green-500" },
+            { name: "TypeScript", color: "bg-yellow-500" },
+            { name: "Twillo", color: "bg-green-500" },
             { name: "Tailwind CSS", color: "bg-purple-500" },
-            { name: "Gemini", color: "bg-red-500" },
+            { name: "Appwrite", color: "bg-red-500" },
         ],
         demoUrl: "https://example.com/demo1",
         githubUrl: "#",
@@ -20,7 +20,7 @@ const projects = [
 
     {
         id: 2,
-        title: "fintech web app",
+        title: "Fintech web app",
         description: "A full functional online banking platform, built with React , Nextjs and Node.js.",
         image: "/project2.PNG",
         tags: [
@@ -36,18 +36,16 @@ const projects = [
 ,
     {
         id: 3,
-        title: "E-Home rental Store",
-        description: "A Full Stack Home Rentals Application in React JS, Redux, Node JS, MongoDB, JWT, Material UI.",
-        image: "/project3.PNG",
+        title: "Cosmetic App",
+        description: "A Landing Page For Cosmetic clinic",
+        image: "/project3.png",
         tags: [
             { name: "React", color: "bg-blue-500" },
             { name: "Node.js", color: "bg-green-500" },
-            { name: "Express", color: "bg-yellow-500" },
-            { name: "MongoDB", color: "bg-purple-500" },
             { name: "Tailwind CSS", color: "bg-red-500" },
         ],
-        demoUrl: "https://example.com/demo3",
-        githubUrl: "#",
+        demoUrl: "https://cosmetic-teal.vercel.app/",
+        githubUrl: "https://github.com/izzypositivetech-001/cosmetic.git",
     },
     {
         id: 4,
@@ -66,7 +64,7 @@ const projects = [
     },
     {
         id:5,
-        title: "react admin dashboard",
+        title: "React admin dashboard",
         description: "A responsive admin dashboard template built with React and Tailwind CSS.",
         image: "/project5.PNG",
         tags: [
@@ -76,22 +74,22 @@ const projects = [
            
             { name: "CSS", color: "bg-red-500" },
         ],
-        demoUrl: "https://example.com/demo5",
-        githubUrl: "#",
+        demoUrl: "https://admin-dashboard-beta-ten-51.vercel.app",
+        githubUrl: "https://github.com/izzypositivetech-001/admin-dashboard.git",
     },
     {
         id:6,
-        title: " A Real-Time Weather App using React, Tailwind CSS & WeatherAPI ",
-        description: "A real-time weather application that provides current weather data and forecasts.",
-        image: "/project6.PNG",
+        title: "Modern Startup Landing Page",
+        description: "A sleek and responsive landing page built with React, Framer Motion, Swiper, and Tailwind CSS. It features smooth animations,  a carousel for testimonials or features, and a modern layout designed to capture user attention and boost engagement."
+        ,
+        image: "/project6.png",
         tags: [
             { name: "React", color: "bg-blue-500" },
             { name: "Tailwind CSS", color: "bg-green-500" },
             { name: "JavaScript", color: "bg-yellow-500" },
-            { name: "API", color: "bg-purple-500" },
         ],
-        demoUrl: "https://example.com/demo6",
-        githubUrl: "#",
+        demoUrl: "https://modern-landingpage-brown.vercel.app/",
+        githubUrl: "https://github.com/izzypositivetech-001/modern-landingpage.git",
     }
 ];
 
