@@ -14,8 +14,8 @@ const projects = [
             { name: "Tailwind CSS", color: "bg-purple-500" },
             { name: "Appwrite", color: "bg-red-500" },
         ],
-        demoUrl: "https://example.com/demo1",
-        githubUrl: "#",
+        demoUrl: "https://izzy-care-3kmb.vercel.app/",
+        githubUrl: "https://github.com/izzypositivetech-001/IzzyCare.git",
     },
 
     {
