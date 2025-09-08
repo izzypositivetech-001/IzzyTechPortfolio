@@ -64,9 +64,9 @@ const projects = [
     },
     {
         id:5,
-        title: "React admin dashboard",
-        description: "A responsive admin dashboard template built with React and Tailwind CSS.",
-        image: "/project5.PNG",
+        title: "Modern Restaurant App",
+        description: "A modern and responsive restaurant web app built with React, featuring an elegant design, interactive menu, and smooth user experience. Designed to showcase a restaurant brand with style and functionality.",
+        image: "/modern-restaurant.png",
         tags: [
             { name: "React", color: "bg-blue-500" },
             { name: "Tailwind CSS", color: "bg-green-500" },
@@ -74,8 +74,8 @@ const projects = [
            
             { name: "CSS", color: "bg-red-500" },
         ],
-        demoUrl: "https://admin-dashboard-beta-ten-51.vercel.app",
-        githubUrl: "https://github.com/izzypositivetech-001/admin-dashboard.git",
+        demoUrl: "https://modern-restaurant-teal.vercel.app/",
+        githubUrl: "https://github.com/izzypositivetech-001/modern-restaurant.git",
     },
     {
         id:6,
