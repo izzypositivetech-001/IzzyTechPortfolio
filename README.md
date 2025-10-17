@@ -1,12 +1,92 @@
-# React + Vite
+#  Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio built to showcase my skills, projects, and experience as a **Full-Stack Developer**.
 
-Currently, two official plugins are available:
+Live Demo → https://izzy-tech-portfolio.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Fully responsive design (mobile-first)
+* Smooth animations and transitions
+* Project showcase with live demos and GitHub links
+* Contact form (integrated with EmailJS or API endpoint)
+* SEO-optimized meta tags
+* Dark mode toggle (if applicable)
+* Deployed on **Vercel**
+
+---
+
+## Tech Stack
+
+**Frontend:** React / Next.js / Vite
+**Styling:** Tailwind CSS / Styled-Components
+**Deployment:** Vercel
+
+
+---
+
+## Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/izzypositivetech-001/IzzyTechPortfolio.git
+
+# 2. Navigate into the project folder
+cd portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Run the development server
+npm run dev
+```
+
+Visit `http://localhost:5173` or `http://localhost:3000` depending on your framework.
+
+---
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+Then deploy using:
+
+```bash
+vercel deploy --prebuilt
+```
+
+---
+
+## Project Structure
+
+```
+portfolio/
+├── src/
+│   ├──lib
+│   ├──pages
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   ├── hooks/
+├── public/
+├── package.json
+└── README.md
+```
+
+
+
+## 🧑‍💻 Author
+
+**Adewale Gbadebo**
+Full-Stack Developer | JavaScript | React | Node.js
+[LinkedIn https://www.linkedin.com/in/adewale-gbadebo-717867350/ • [Twitter: https://x.com/Gbadeb16Adewale]] • [Portfolio](https://izzy-tech-portfolio.vercel.app/)
+
+---
+
+##  License
+
+This project is licensed under the MIT License — feel free to use and modify it.
