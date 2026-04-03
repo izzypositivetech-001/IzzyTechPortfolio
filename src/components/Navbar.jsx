@@ -24,18 +24,25 @@ export const Navbar = () => {
   // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-    return () => { document.body.style.overflow = "auto"; };
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isMenuOpen]);
 
   return (
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm" : "py-5"
+        isScrolled
+          ? "py-3 bg-background/80 backdrop-blur-md shadow-sm"
+          : "py-5",
       )}
     >
       <div className="container px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <a href="#hero" className="text-xl font-bold text-primary whitespace-nowrap">
+        <a
+          href="#hero"
+          className="text-xl font-bold text-primary whitespace-nowrap"
+        >
           <span className="text-glow text-foreground">IzzyTech</span> Portfolio
         </a>
 
@@ -68,7 +75,7 @@ export const Navbar = () => {
             "transition-all duration-300 ease-in-out md:hidden",
             isMenuOpen
               ? "opacity-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 -translate-y-4 pointer-events-none"
+              : "opacity-0 -translate-y-4 pointer-events-none",
           )}
         >
           <div className="flex flex-col space-y-6 text-lg sm:text-xl">

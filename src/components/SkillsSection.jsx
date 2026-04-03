@@ -1,88 +1,86 @@
-import React, { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
+import { Layout, Server, Settings } from "lucide-react";
+import { ScrollReveal } from "./ScrollReveal";
 
-const Skills = [
-    {name: 'HTML/CSS', level: 90, category: 'Frontend'},
-    {name: 'JavaScript', level: 85, category: 'Frontend'},
-    {name: 'React', level: 80, category: 'Frontend'},
-    {name: 'TypeScript', level: 75, category: 'Frontend'},
-    {name: 'Tailwind CSS', level: 80, category: 'Frontend'},
-    {name: 'Next.js', level: 70, category: 'Frontend'},
-
-    // Backend Skills
-    {name: 'Node.js', level: 80, category: 'Backend'},
-    {name: 'Express.js', level: 75, category: 'Backend'},
-    {name: 'MongoDB', level: 70, category: 'Backend'},
-    {name: 'PostgreSQL', level: 70, category: 'Backend'},
-    {name: 'GraphQL', level: 65, category: 'Backend'},
-    {name: 'REST APIs', level: 80, category: 'Backend'},
-
-    // tools
-    {name: 'Git', level: 85, category: 'Tools'},
-    {name: 'Docker', level: 70, category: 'Tools'},
-    {name: 'VS Code', level: 90, category: 'Tools'},
+const skillCategories = [
+  {
+    title: "Frontend Development",
+    icon: <Layout className="h-6 w-6 text-primary mb-4" />,
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML/CSS",
+      "Redux",
+      "Framer Motion",
+    ],
+  },
+  {
+    title: "Backend Development",
+    icon: <Server className="h-6 w-6 text-primary mb-4" />,
+    skills: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "GraphQL",
+      "REST APIs",
+      "Firebase",
+      "Appwrite",
+    ],
+  },
+  {
+    title: "Tools & DevOps",
+    icon: <Settings className="h-6 w-6 text-primary mb-4" />,
+    skills: [
+      "Git",
+      "GitHub",
+      "Docker",
+      "Vercel",
+      "VS Code",
+      "Postman",
+      "Figma",
+    ],
+  },
 ];
 
-const categories = [
-   'all',
-   'Frontend',
-    'Backend',
-    'Tools'
-]
-
 export const SkillsSection = () => {
-    const [activeCategory, setActiveCategory] = useState('all');
-    const filteredSkills = Skills.filter((skill) =>
-        activeCategory === 'all' || skill.category === activeCategory
-    );
   return (
-    
-    <section id='skills' className='py-24 px-4 relative bg-secondary/30'>
-    <div className='container mx-auto max-w-5xl' >
-        <h2 className='text-3xl font-bold md:text-4xl mb-12 text-center'>
-            My <span className='text-primary'> Skills</span>
-        </h2>
-        <div className='flex flex-wrap justify-center mb-12 gap-12'>
-         {categories.map((category, key) => (
-            <button 
-            key={key} 
-            className={cn(
-                'px-5 py-2 rounded-full transition-colors duration-300 capitalize',
-                activeCategory === category 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-secondary/70 text-foreground hover:bd-secondary')}
-            onClick={() => setActiveCategory(category)}
-            >{category}</button>
-         ))}
-       </div>
+    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+      <div className="container mx-auto max-w-5xl">
+        <ScrollReveal>
+          <h2 className="text-3xl font-bold md:text-4xl mb-12 text-center">
+            My <span className="text-primary"> Skills</span>
+          </h2>
+        </ScrollReveal>
 
-
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-         {filteredSkills.map((skill, key) => (
-            <div 
-            key={key}
-            className='bg-card p-6 rounded-lg shadow-xs card-hover'>
-                <div className='text-left mb-4'>
-                    <h3 className='font-semibold text-lg '>
-                        {skill.name}
-                    </h3>
-                </div>
-                <div className='w-full bg-secondary-50 rounded-full overflow-hidden'>
-                   
-                    <div className= 'bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]'style={{width: `${skill.level}%`}} 
-                    />
-                </div>
-                <div className='text-right mt-1'>
-                    <span className='text-sm text-muted-foreground'>
-                        {skill.level}%
-                    </span>
-                </div>
-            </div>
-            
-         ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {skillCategories.map((category, index) => (
+            <ScrollReveal
+              key={index}
+              delay={index * 0.2}
+              className="bg-card p-8 rounded-xl shadow-sm border border-border hover:shadow-md transition-shadow card-hover"
+            >
+              <div className="flex flex-col items-center text-center">
+                {category.icon}
+                <h3 className="font-semibold text-xl mb-6">{category.title}</h3>
+              </div>
+              <div className="flex flex-wrap justify-center gap-3">
+                {category.skills.map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-secondary/50 text-foreground px-3 py-1.5 rounded-lg text-sm font-medium border border-border/50"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
-    </div>
-
     </section>
-  )
-}
+  );
+};

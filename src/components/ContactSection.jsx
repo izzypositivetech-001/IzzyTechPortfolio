@@ -10,40 +10,46 @@ import {
 import React from "react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
+import { ScrollReveal } from "./ScrollReveal";
 
 export const ContactSection = () => {
-    // State to manage form submission status
-    const [isSubmitting, setIsSubmitting] = React.useState(false);
-       
-    const toast = useToast();
-    // Function to handle form submission
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setIsSubmitting(true); // Set submitting state to true
+  // State to manage form submission status
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-        setTimeout(() => {
-            // Show a success toast message after form submission
-            toast({
-                title: "Success",
-                description: "Your message has been sent successfully.",
-            })
-            setIsSubmitting(false); // Reset submitting state after submission
-            alert("Form submitted successfully!");
-        }, 1500); // Simulate a delay of 1.5 seconds
-    };
+  const toast = useToast();
+  // Function to handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsSubmitting(true); // Set submitting state to true
+
+    setTimeout(() => {
+      // Show a success toast message after form submission
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully.",
+      });
+      setIsSubmitting(false); // Reset submitting state after submission
+      // Reset form if possible, but for Formspree it usually redirects or needs AJAX handling.
+      // Assuming this is just simulation or they use Formspree's AJAX.
+    }, 1500); // Simulate a delay of 1.5 seconds
+  };
   return (
     <section className="py-24 px-4 relative bg-secondary/30" id="contact">
       <div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4">
-          Get In <span className="text-primary"> Touch</span>
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision. Whether you have a question,
-          a project in mind, or just want to say hi, feel free to reach out!
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          <div className="space-y-8">
+        <ScrollReveal>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-4">
+            Get In <span className="text-primary"> Touch</span>
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your vision. Whether you have a question,
+            a project in mind, or just want to say hi, feel free to reach out!
+          </p>
+        </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <ScrollReveal delay={0.2} className="space-y-8">
             <h3 className="text-2xl semi-bold text-center mb-6">
               Contact Information
             </h3>
@@ -83,55 +89,56 @@ export const ContactSection = () => {
                   <MapPin className="h-6 w-6 text-primary" />{" "}
                 </div>
                 <h4 className="font-medium"> Location</h4>
-                <a
-                  href="mailto:izzypositivetech@gmail.com"
-                  className="text-muted-foreground/80 hover:text-primary transition-colors duration-300"
-                >
+                <div className="text-muted-foreground/80">
                   MainLand, Lagos, Nigeria
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8">
+              <h4 className="font-medium mb-4">Connect With Me</h4>
+              <div className="flex space-x-4 justify-center">
+                <a href="https://www.linkedin.com/in/adewale-gbadebo-717867350/">
+                  <Linkedin />
+                </a>
+                <a href="https://github.com/izzypositivetech-001">
+                  <Github />
+                </a>
+                <a href="https://x.com/Gbadeb16Adewale">
+                  <Twitter />
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="pt-8">
-            <h4 className="font-medium mb-4">Connect With Me</h4>
-            <div className="flex space-x-4 justify-center">
-              <a href="https://www.linkedin.com/in/adewale-gbadebo-717867350/">
-                <Linkedin />
-              </a>
-              <a href="https://github.com/izzypositivetech-001">
-                <Github />
-              </a>
-              <a href="https://x.com/Gbadeb16Adewale">
-                <Twitter />
-              </a>
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
-        <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+        <ScrollReveal delay={0.4} className="bg-card p-8 rounded-lg shadow-xs">
           <h4 className="font-medium mb-6 ">Send Me a Message</h4>
           <form
             action="https://formspree.io/f/xjvjlqzj"
             method="POST"
+            onSubmit={handleSubmit}
             className="space-y-6"
           >
-            <label htmlFor="name" className="w-full px-4 py-3 rounded-md border-input bg-background focus:outline-hidden">
+            <label
+              htmlFor="name"
+              className="w-full px-4 py-3 rounded-md border-input bg-background focus:outline-hidden"
+            >
               {" "}
               Your Name
             </label>
             <input
-                id="name"
+              id="name"
               type="text"
               name="name"
               placeholder="Your Name"
               required
-              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 mt-4 rezize-none"
+              className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 mt-4 resize-none"
             />
             <label htmlFor="email" className="block text-sm font-medium mb-2">
               Your Email
             </label>
             <input
-            id="email"
+              id="email"
               type="email"
               name="email"
               placeholder="Your Email"
@@ -150,15 +157,16 @@ export const ContactSection = () => {
             ></textarea>
             <button
               type="submit"
-                disabled={isSubmitting} // Disable button when submitting
-              className={cn("cosmic-button w-full flex items-center  justify-center gap-2",
-                )}
+              disabled={isSubmitting} // Disable button when submitting
+              className={cn(
+                "cosmic-button w-full flex items-center  justify-center gap-2",
+              )}
             >
-             {isSubmitting  ? "Sending..." : "Send Message" }
+              {isSubmitting ? "Sending..." : "Send Message"}
               <Send className="h-4 w-4" />
             </button>
           </form>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

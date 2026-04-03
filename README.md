@@ -20,9 +20,8 @@ Live Demo → https://izzy-tech-portfolio.vercel.app/
 
 ## Tech Stack
 
-**Frontend:** React / Next.js / Vite
-**Styling:** Tailwind CSS / Styled-Components
-**Deployment:** Vercel
+**Frontend:** React / Vite
+**Styling:** Tailwind CSS
 
 
 ---
