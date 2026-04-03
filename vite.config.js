@@ -14,4 +14,10 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/__tests__/setup.js',
+    css: true,
+  },
 });

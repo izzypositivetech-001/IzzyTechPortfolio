@@ -16,22 +16,45 @@ export const ContactSection = () => {
   // State to manage form submission status
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-  const toast = useToast();
-  // Function to handle form submission
-  const handleSubmit = (event) => {
+  const { toast } = useToast();
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsSubmitting(true); // Set submitting state to true
+    setIsSubmitting(true);
 
-    setTimeout(() => {
-      // Show a success toast message after form submission
-      toast({
-        title: "Success",
-        description: "Your message has been sent successfully.",
+    const form = event.target;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
       });
-      setIsSubmitting(false); // Reset submitting state after submission
-      // Reset form if possible, but for Formspree it usually redirects or needs AJAX handling.
-      // Assuming this is just simulation or they use Formspree's AJAX.
-    }, 1500); // Simulate a delay of 1.5 seconds
+      
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thanks for reaching out! I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "There was a problem submitting your form.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Network Error",
+        description: "Please check your internet connection and try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <section className="py-24 px-4 relative bg-secondary/30" id="contact">
@@ -114,7 +137,7 @@ export const ContactSection = () => {
         <ScrollReveal delay={0.4} className="bg-card p-8 rounded-lg shadow-xs">
           <h4 className="font-medium mb-6 ">Send Me a Message</h4>
           <form
-            action="https://formspree.io/f/xjvjlqzj"
+            action="https://formspree.io/f/xaqlplen"
             method="POST"
             onSubmit={handleSubmit}
             className="space-y-6"

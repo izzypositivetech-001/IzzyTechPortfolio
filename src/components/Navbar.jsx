@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -29,6 +30,9 @@ export const Navbar = () => {
     };
   }, [isMenuOpen]);
 
+  const sectionIds = navItems.map((item) => item.href.replace("#", ""));
+  const activeSection = useScrollSpy(sectionIds, 50);
+
   return (
     <nav
       className={cn(
@@ -48,15 +52,23 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-foreground hover:text-primary transition-colors duration-300 dark:text-foreground/90 dark:hover:text-primary"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.replace("#", "");
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "transition-colors duration-300 dark:text-foreground/90 dark:hover:text-primary",
+                  isActive
+                    ? "text-primary font-semibold"
+                    : "text-foreground hover:text-primary"
+                )}
+              >
+                {item.name}
+              </a>
+            );
+          })}
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,16 +91,24 @@ export const Navbar = () => {
           )}
         >
           <div className="flex flex-col space-y-6 text-lg sm:text-xl">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="px-4 py-3 text-foreground hover:text-primary transition-colors duration-300 dark:text-foreground/90 dark:hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.replace("#", "");
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "px-4 py-3 transition-colors duration-300 dark:text-foreground/90 dark:hover:text-primary",
+                    isActive
+                      ? "text-primary font-semibold border-l-2 border-primary"
+                      : "text-foreground hover:text-primary"
+                  )}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

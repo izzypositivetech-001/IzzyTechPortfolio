@@ -1,0 +1,93 @@
+export const projects = [
+  {
+    id: 1,
+    title: "Patient Management System",
+    description:
+      "A full-stack web application integrating Twilio for SMS notifications. Enables hospitals to manage patient records and communication efficiently with role-based access.",
+    image: "/project1.webp",
+    tags: [
+      { name: "Next.js", color: "bg-slate-700" },
+      { name: "TypeScript", color: "bg-blue-600" },
+      { name: "Twilio", color: "bg-red-500" },
+      { name: "Tailwind CSS", color: "bg-cyan-500" },
+      { name: "Appwrite", color: "bg-pink-500" },
+    ],
+    demoUrl: "https://izzy-care-3kmb.vercel.app/",
+    githubUrl: "https://github.com/izzypositivetech-001/IzzyCare.git",
+  },
+  {
+    id: 2,
+    title: "Afroluxe",
+    description:
+      "Full-stack e-commerce platform built for a premium hair brand. Includes secure authentication, role-based access control, and a scalable architecture designed for global growth.",
+    image: "/afroluxe.no_portfolio.webp",
+    tags: [
+      { name: "Next.js", color: "bg-slate-700" },
+      { name: "React", color: "bg-blue-500" },
+      { name: "Node.js", color: "bg-green-600" },
+      { name: "MongoDB", color: "bg-green-500" },
+      { name: "RBAC", color: "bg-indigo-500" },
+    ],
+    demoUrl: "https://www.afroluxe.no/",
+    githubUrl: "https://github.com/izzypositivetech-001/afroluxe-frontend.git",
+  },
+  {
+    id: 3,
+    title: "AI Resume Analyzer",
+    description:
+      "Career-focused web application that utilizes AI for intelligent resume evaluation. Helps users track applications and identify weaknesses to improve their success chances.",
+    image: "/resume_analyzer.webp",
+    tags: [
+      { name: "React", color: "bg-blue-500" },
+      { name: "Node.js", color: "bg-green-600" },
+      { name: "AI", color: "bg-purple-500" },
+    ],
+    demoUrl: "https://resume-analyzer-amber.vercel.app/",
+    githubUrl: "#",
+  },
+  {
+    id: 4,
+    title: "Productivity Management System",
+    description:
+      "Full-stack task management system enabling users to organize tasks with real-time updates. Focuses on efficient state handling and a robust user-specific backend architecture.",
+    image: "/product_manager.webp",
+    tags: [
+      { name: "React", color: "bg-blue-500" },
+      { name: "Node.js", color: "bg-green-600" },
+      { name: "Express", color: "bg-gray-500" },
+      { name: "MongoDB", color: "bg-green-500" },
+    ],
+    demoUrl: "https://task-manager-client-virid.vercel.app/login",
+    githubUrl:
+      "https://github.com/izzypositivetech-001/task-manager-client.git",
+  },
+  {
+    id: 5,
+    title: "Modern Restaurant App",
+    description:
+      "Responsive restaurant web app featuring an elegant UI design and interactive menus. Built to showcase brand identity with smooth animations and a premium look and feel.",
+    image: "/modern-restaurant.webp",
+    tags: [
+      { name: "React", color: "bg-blue-500" },
+      { name: "JavaScript", color: "bg-yellow-500" },
+      { name: "Tailwind CSS", color: "bg-cyan-500" },
+    ],
+    demoUrl: "https://modern-restaurant-teal.vercel.app/",
+    githubUrl: "https://github.com/izzypositivetech-001/modern-restaurant.git",
+  },
+  {
+    id: 6,
+    title: "Davido Interactive Experience",
+    description:
+      "Visually immersive web experience inspired by Davido. Explores creative frontend engineering through scroll-based storytelling, dynamic transitions, and GSAP animations.",
+    image: "/davido_.webp",
+    tags: [
+      { name: "React", color: "bg-blue-500" },
+      { name: "Vite", color: "bg-purple-500" },
+      { name: "GSAP", color: "bg-green-500" },
+      { name: "Tailwind CSS", color: "bg-cyan-500" },
+    ],
+    demoUrl: "https://davido-app.vercel.app/",
+    githubUrl: "https://github.com/izzypositivetech-001/davido-app.git",
+  },
+];
